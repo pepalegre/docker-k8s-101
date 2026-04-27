@@ -1,4 +1,4 @@
-# Docker y Kubernetes Inicial (Hospital de Bellvitge)
+# Docker + Kubernetes 101
 
 Curso de entrada, orientado a analistas y perfiles de datos, con enfoque de uso practico:
 
@@ -44,7 +44,7 @@ Este repositorio esta preparado para que cada alumno:
 
 Repositorio oficial del curso:
 
-- https://github.com/davidpestana/docker-kubernetes-inicial-bellvitge
+- https://github.com/davidpestana/docker-k8s-101
 
 Flujo recomendado para alumnos:
 
