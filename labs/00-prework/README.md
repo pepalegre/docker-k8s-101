@@ -1,11 +1,11 @@
-# Modulo 1 - Fundamentos y prework tecnico
+# Prework - Fundamentos y prework tecnico
 
-Alineado al **Modulo 1 (2h)** y al inicio del **Modulo 2** del temario: primero ideas claras, luego instalacion validada paso a paso.
+Alineado a la introduccion del curso y al inicio del **Modulo 1**: primero ideas claras, luego instalacion validada paso a paso.
 
 ## Navegacion rapida
 
 - [Indice del libro](../README.md)
-- [Siguiente: Modulo 2 - Docker basico](../01-docker-basico/README.md)
+- [Siguiente: Modulo 1 - Docker basico](../01-docker-basico/README.md)
 
 ---
 
@@ -44,11 +44,11 @@ Este curso es de **uso**: tu construyes imagen, despliegas y consumes el cluster
 
 ### A.5 Mapa mental del resto del libro
 
-1. **Modulo 2**: una sola app en Docker (imagen, volumen, red).
-2. **Modulo 3**: varios servicios con Compose (API + BD + ETL).
-3. **Modulo 4**: mismo servicio en K8s; imagen en registry; manifiestos; **Kustomize** base + overlay.
-4. **Modulo 5**: batch (Job/CronJob), configuracion (ConfigMap/Secret).
-5. **Modulo 6**: cierre end-to-end con buenas practicas de versionado.
+1. **Modulo 1**: una sola app en Docker (imagen, volumen, red).
+2. **Modulo 2**: varios servicios con Compose (API + BD + ETL).
+3. **Modulo 3**: mismo servicio en K8s; imagen en registry; manifiestos; **Kustomize** base + overlay.
+4. **Modulo 4**: batch (Job/CronJob), configuracion (ConfigMap/Secret).
+5. **Modulo 5**: cierre end-to-end con buenas practicas de versionado.
 
 Checkpoint mental: si la Parte A esta clara, continua con la Parte B.
 
@@ -122,7 +122,7 @@ kubectl expose deployment hello-nginx --port=80 --target-port=80 --type=ClusterI
 kubectl get deploy,pods,svc
 ```
 
-### Paso B.7 - Limpieza antes del Modulo 2
+### Paso B.7 - Limpieza antes del Modulo 1
 
 ```bash
 kubectl delete service hello-nginx
@@ -144,4 +144,4 @@ kubectl delete deployment hello-nginx
 ## Navegacion
 
 - [Indice del libro](../README.md)
-- [Siguiente: Modulo 2 - Docker basico](../01-docker-basico/README.md)
+- [Siguiente: Modulo 1 - Docker basico](../01-docker-basico/README.md)
