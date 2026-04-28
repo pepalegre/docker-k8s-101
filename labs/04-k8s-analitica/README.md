@@ -1,25 +1,20 @@
-# Modulo 4 - Kubernetes para analítica
+# Modulo 4 - Kubernetes para analitica
 
 ## Capítulos del módulo
 
-1. [job-etl-una-ejecucion.md](job-etl-una-ejecucion.md)
-2. [cronjob-etl-programado.md](cronjob-etl-programado.md)
-3. [configmap-y-secret.md](configmap-y-secret.md)
-
----
+1. [01-job-etl-una-ejecucion.md](01-job-etl-una-ejecucion.md)
+2. [02-cronjob-etl-programado.md](02-cronjob-etl-programado.md)
+3. [03-configmap-y-secret.md](03-configmap-y-secret.md)
 
 # LABORATORIO
 
 Directorio: `labs/04-k8s-analitica/laboratorio/`
 
-1. [step-01-crear-configuracion.md](laboratorio/step-01-crear-configuracion.md)
-2. [step-02-ejecutar-job.md](laboratorio/step-02-ejecutar-job.md)
-3. [step-03-activar-cronjob.md](laboratorio/step-03-activar-cronjob.md)
+1. [01-crear-configuracion.md](laboratorio/01-crear-configuracion.md)
+2. [02-ejecutar-job.md](laboratorio/02-ejecutar-job.md)
+3. [03-activar-cronjob.md](laboratorio/03-activar-cronjob.md)
 
----
-
-- [Siguiente módulo: Modulo 5 - Proyecto final](../05-proyecto-final/README.md)
 ## Navegacion del libro
 
-- [Anterior](../03-k8s-basico/laboratorio/step-03-kustomize-overlay.md)
-- [Siguiente](job-etl-una-ejecucion.md)
+- [Anterior](../03-k8s-basico/laboratorio/03-kustomize-overlay.md)
+- [Siguiente](01-job-etl-una-ejecucion.md)

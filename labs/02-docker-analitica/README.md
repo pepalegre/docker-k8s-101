@@ -1,25 +1,20 @@
-# Modulo 2 - Docker para analítica
+# Modulo 2 - Docker para analitica
 
 ## Capítulos del módulo
 
-1. [api-fastapi-con-docker.md](api-fastapi-con-docker.md)
-2. [etl-batch-con-docker.md](etl-batch-con-docker.md)
-3. [compose-api-db-etl.md](compose-api-db-etl.md)
-
----
+1. [01-api-fastapi-con-docker.md](01-api-fastapi-con-docker.md)
+2. [02-etl-batch-con-docker.md](02-etl-batch-con-docker.md)
+3. [03-compose-api-db-etl.md](03-compose-api-db-etl.md)
 
 # LABORATORIO
 
 Directorio: `labs/02-docker-analitica/laboratorio/`
 
-1. [step-01-estructura-stack.md](laboratorio/step-01-estructura-stack.md)
-2. [step-02-compose-up.md](laboratorio/step-02-compose-up.md)
-3. [step-03-etl-on-demand.md](laboratorio/step-03-etl-on-demand.md)
+1. [01-estructura-stack.md](laboratorio/01-estructura-stack.md)
+2. [02-compose-up.md](laboratorio/02-compose-up.md)
+3. [03-etl-on-demand.md](laboratorio/03-etl-on-demand.md)
 
----
-
-- [Siguiente módulo: Modulo 3 - Kubernetes básico](../03-k8s-basico/README.md)
 ## Navegacion del libro
 
-- [Anterior](../01-docker-basico/laboratorio/step-03-dockerfile-build-compose.md)
-- [Siguiente](api-fastapi-con-docker.md)
+- [Anterior](../01-docker-basico/laboratorio/03-dockerfile-build-compose.md)
+- [Siguiente](01-api-fastapi-con-docker.md)
