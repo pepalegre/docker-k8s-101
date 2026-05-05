@@ -83,6 +83,15 @@ def db_ping():
     with engine.connect() as conn:
         one = conn.execute(text("SELECT 1")).scalar_one()
     return {"db": int(one)}
+
+@app.get("/metrics")
+def metrics():
+    engine = create_engine(DATABASE_URL)
+    with engine.connect() as conn:
+        rows = conn.execute(
+            text("SELECT metric, value FROM metrics ORDER BY metric ASC")
+        ).mappings().all()
+    return {"items": rows}
 ```
 
 Crea `labs/02-docker-analitica/trabajo/stack-analitica/api/Dockerfile`:
@@ -100,6 +109,7 @@ CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
 **Qué estamos haciendo aquí**
 
 - Definir un servicio HTTP mínimo para validar salud y conexión real a DB.
+- Exponer un endpoint para leer los datos transformados por el ETL.
 - Empaquetar ese servicio en una imagen reproducible para ejecutarlo igual en cualquier entorno.
 
 ### 4) Crear contenido del ETL (código + imagen)
