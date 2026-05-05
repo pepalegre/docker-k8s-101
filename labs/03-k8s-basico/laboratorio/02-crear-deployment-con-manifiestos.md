@@ -1,33 +1,22 @@
-# Step 01 - Using kubectl to create a Deployment (con manifiestos)
+# Step 02 - Crear Deployment con manifiestos
 
 ## Objetivo del step
 
-Replicar el lab oficial de "create deployment", pero en modo declarativo:
-
-- crear `Namespace`
-- definir `Deployment` en YAML
-- aplicar con `kubectl apply`
+Replicar "Using kubectl to Create a Deployment" con enfoque declarativo (`YAML + apply`).
 
 ## Fundamento del step
 
-En el tutorial oficial se usa `kubectl create deployment`. Aqui conseguimos el mismo resultado, pero con manifiestos versionables.
+En lugar de `kubectl create deployment`, definimos recursos en archivo para que sean versionables y repetibles.
 
-## Ejecución guiada
+## Ejecucion guiada
 
-### 1) Verificar cluster y nodos
-
-```bash
-kubectl version
-kubectl get nodes
-```
-
-### 2) Crear estructura de manifiestos
+### 1) Crear carpeta de manifiestos
 
 ```bash
 mkdir -p labs/03-k8s-basico/trabajo/k8s/manifests
 ```
 
-### 3) Crear `00-namespace.yaml`
+### 2) Crear namespace
 
 Archivo: `labs/03-k8s-basico/trabajo/k8s/manifests/00-namespace.yaml`
 
@@ -38,7 +27,7 @@ metadata:
   name: k8s-basics
 ```
 
-### 4) Crear `01-deployment.yaml`
+### 3) Crear deployment
 
 Archivo: `labs/03-k8s-basico/trabajo/k8s/manifests/01-deployment.yaml`
 
@@ -67,49 +56,39 @@ spec:
             - containerPort: 8080
 ```
 
-### 5) Aplicar manifiestos
+### 4) Aplicar recursos
 
 ```bash
 kubectl apply -f labs/03-k8s-basico/trabajo/k8s/manifests/00-namespace.yaml
 kubectl apply -f labs/03-k8s-basico/trabajo/k8s/manifests/01-deployment.yaml
 ```
 
-### 6) Verificar el deployment creado
+## Que validas y que debes ver
+
+- Deployment creado en namespace `k8s-basics`.
+- Pod en estado `Running`.
 
 ```bash
-kubectl -n k8s-basics get deployments
-kubectl -n k8s-basics get pods
+kubectl -n k8s-basics get deployments,pods
 ```
-
-## Qué validas y qué debes ver
-
-- `kubernetes-bootcamp` aparece en `get deployments`.
-- Se crea al menos 1 Pod en `Running`.
 
 ## Errores comunes
 
-- Olvidar `namespace: k8s-basics` en el Deployment.
-- Error tipografico en la imagen.
+- Namespace omitido dentro del Deployment.
+- Imagen mal escrita.
 
 ## Reto
 
-Sube replicas a 2 en el manifiesto y vuelve a aplicar.
+Sube replicas a 2 editando el YAML y reaplica.
 
-## Solución del reto
-
-En `01-deployment.yaml`:
-
-```yaml
-replicas: 2
-```
-
-Y aplica:
+## Solucion del reto
 
 ```bash
 kubectl apply -f labs/03-k8s-basico/trabajo/k8s/manifests/01-deployment.yaml
+kubectl -n k8s-basics get pods -l app=kubernetes-bootcamp
 ```
 
 ## Navegacion del libro
 
-- [Anterior](../03-kustomize-base-overlays.md)
-- [Siguiente](02-deploy-y-validar.md)
+- [Anterior](01-crear-cluster-kind.md)
+- [Siguiente](03-ver-pods-y-nodos.md)
