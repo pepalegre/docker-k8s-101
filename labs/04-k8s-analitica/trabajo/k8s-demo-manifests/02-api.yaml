@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: api
-          image: ghcr.io/TU_USUARIO/docker-k8s-101/api:latest
+          image: ghcr.io/pepalegre/docker-k8s-101/api:latest
           env:
             - name: DATABASE_URL
               value: postgresql://analytics:analytics@db:5432/analytics
