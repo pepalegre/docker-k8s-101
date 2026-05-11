@@ -10,3 +10,5 @@
 ## Regla de oro
 
 No avances de modulo hasta completar el checklist del lab actual.
+
+El **proyecto final** (modulo 5) parte del **laboratorio terminado del modulo 4**: no es un segundo despliegue distinto; es empaquetar, documentar y operar lo ya validado.
