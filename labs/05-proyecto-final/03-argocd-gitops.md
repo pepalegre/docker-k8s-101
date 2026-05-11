@@ -16,6 +16,7 @@ En el proyecto final debes **convivir** con ambos: el runbook documenta `kubectl
 1. **Repositorio accesible desde el cluster**: en `kind` el plan mas simple es un fork **publico** en GitHub con el path del overlay ya subido (`git push`). Repos privados exigen credenciales en Argo CD; quedan como extension.
 2. **El recurso `Application` no debe vivir dentro del mismo Kustomize que despliega la app**, para no mezclar el namespace `analytics-data` con el control plane de Argo (`argocd`). Convencion del curso: carpeta `gitops/` al mismo nivel que `k8s/`, aplicada una vez con `kubectl apply -f`.
 3. **Primera sync**: si ya tenias recursos creados a mano con los mismos nombres, Argo puede mostrar `OutOfSync` por anotaciones o labels que el controlador anade. Lo habitual en evaluacion es **cluster limpio** o borrar el namespace de la app antes de delegar en Argo.
+4. **GitHub Codespaces**: al hacer `kubectl port-forward` hacia un puerto local (por ejemplo `8443`), la plataforma **detecta el puerto** y ofrece abrirlo en el navegador con una URL del dominio del Codespace (`*.app.github.dev`). Usa esa URL en el navegador; no hace falta que coincida con `127.0.0.1` desde tu equipo.
 
 ## Piezas minimas
 

@@ -35,7 +35,8 @@ En una terminal dedicada:
 kubectl port-forward svc/argocd-server -n argocd 8443:443
 ```
 
-Abre `https://127.0.0.1:8443` (acepta el riesgo del certificado autofirmado en el navegador de clase).
+- **GitHub Codespaces** (flujo recomendado del curso): el entorno **detecta el puerto 8443** y muestra aviso en la pestaña *Ports* / notificacion *Open in Browser*. Abre la URL que te ofrezca (suele ser `https://<nombre>-8443.app.github.dev` o similar): es el **mapeo automatico** del puerto local al dominio del Codespace. Acepta el aviso del certificado autofirmado si el navegador lo pide.
+- **Maquina local** (Docker Desktop + `kind` en tu PC): abre `https://127.0.0.1:8443` con el mismo aviso de certificado.
 
 ### 4) Carpeta `gitops/` fuera del Kustomize de la app
 
@@ -94,7 +95,7 @@ argocd login 127.0.0.1:8443 --username admin --password <pega-password> --insecu
 argocd app sync proyecto-final-local
 ```
 
-O con el plugin de kubectl si lo tienes configurado; el curso no lo exige.
+Ejecuta estos comandos **en la misma terminal o entorno donde corre el port-forward** (por ejemplo dentro del Codespace): ahi `127.0.0.1:8443` sigue siendo valido. O con el plugin de kubectl si lo tienes configurado; el curso no lo exige.
 
 ### 8) Comprobar estado
 
@@ -108,9 +109,10 @@ kubectl -n analytics-data get pods,svc
 Anade una seccion **GitOps (Argo CD)** con:
 
 1. URL del repo y rama que consume el `Application`.
-2. Comando o pantalla para **sync manual** y como comprobar **Synced / Healthy**.
-3. Como pausar o borrar la Application sin tumbar Argo CD entero (`kubectl delete -f gitops/argocd-application.yaml`).
-4. Aviso: cambios en cluster con `kubectl edit` sin commit generan **deriva**; Argo lo mostrara como `OutOfSync`.
+2. Como abrir la UI en **Codespace** (puerto reenviado / dominio `*.app.github.dev`) o en local (`127.0.0.1`).
+3. Comando o pantalla para **sync manual** y como comprobar **Synced / Healthy**.
+4. Como pausar o borrar la Application sin tumbar Argo CD entero (`kubectl delete -f gitops/argocd-application.yaml`).
+5. Aviso: cambios en cluster con `kubectl edit` sin commit generan **deriva**; Argo lo mostrara como `OutOfSync`.
 
 ## Que validas y que debes ver
 
@@ -119,6 +121,7 @@ Anade una seccion **GitOps (Argo CD)** con:
 
 ## Errores comunes
 
+- En **Codespace**, intentar abrir solo `https://127.0.0.1:8443` desde el navegador de tu portatil sin usar la URL publica que genera la pestaña *Ports* (el tunel no es la misma interfaz que en local).
 - `path` en Git distinto al de tu maquina (mayusculas, carpeta `trabajo` olvidada).
 - Repo privado sin credencial: Argo falla al clonar; usar fork publico o documentar limitacion con el instructor.
 - Aplicar el `Application` antes de hacer `git push`: Argo clona una revision donde aun no existe el path.
