@@ -16,7 +16,7 @@ Al finalizar el curso, el alumno sera capaz de:
 - Levantar stacks multi-servicio con Docker Compose.
 - Desplegar aplicaciones en Kubernetes con manifiestos y Kustomize.
 - Ejecutar procesos batch y programados con Job y CronJob.
-- Empaquetar y documentar operativamente el despliegue analitico del modulo 4 (proyecto final).
+- Empaquetar y documentar operativamente el despliegue analitico del modulo 4, con GitOps (Argo CD) en el proyecto final.
 
 ## Perfil del alumno
 
@@ -95,9 +95,10 @@ La formacion sigue un formato progresivo y guiado:
    - Cierre sobre el laboratorio 4
      - Heredar apps y manifiestos ya validados; no reimplementar el stack.
      - Empaquetado en `proyecto-final/` con README y trazabilidad al modulo 4.
-   - Kustomize y operacion
+   - Kustomize, operacion y GitOps
      - Base mas dos overlays con diferencias intencionales (por ejemplo local vs demo).
      - Versionado coherente imagen-manifiesto; runbook en `docs/operaciones.md`.
+     - Argo CD: `Application` apuntando al overlay en Git; sync y estado Healthy/Synced.
    - Entrega y cierre
      - Evidencias reproducibles, rollback documentado y revision del recorrido.
 
@@ -135,7 +136,7 @@ La formacion sigue un formato progresivo y guiado:
 
 6. Cierre con proyecto final
    - Dar forma al resultado del modulo 4
-     - Kustomize multi-overlay, runbook y evidencias; no duplicar el laboratorio 4.
+     - Kustomize multi-overlay, runbook, Argo CD y evidencias; no duplicar el laboratorio 4.
    - Consolidar criterio tecnico
      - Demostrar autonomia operativa sobre Docker y Kubernetes.
 

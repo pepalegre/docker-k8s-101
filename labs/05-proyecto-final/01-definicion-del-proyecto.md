@@ -20,6 +20,7 @@ Tener en el repo (rutas orientativas del lab 4):
 2. **Sustituir el conjunto de `kubectl apply -f ...` sueltos** por un arbol **Kustomize** (`base` + al menos **dos overlays** con comportamiento distinto: por ejemplo `local` para `kind` y `demo` para un perfil mas ligero o con otro numero de replicas).
 3. **Documentar operacion**: como desplegar, como comprobar salud, como ejecutar un job manual desde el CronJob y como hacer **rollback** de la API.
 4. **Versionar la entrega**: una etiqueta git o un numero de version en README que corresponda a las imagenes referenciadas en Kustomize.
+5. **GitOps con Argo CD**: instalar el controlador en el cluster, declarar un `Application` apuntando al path Kustomize del overlay en Git y documentar sync y deriva.
 
 ## Estructura esperada (orientativa)
 
@@ -27,7 +28,7 @@ Tener en el repo (rutas orientativas del lab 4):
 proyecto-final/
   README.md                 # contexto, arquitectura en texto, enlace al lab 4
   docs/
-    operaciones.md          # runbook: desplegar, validar, rollback, limpiar
+    operaciones.md          # runbook: kubectl, Argo CD, validar, rollback, limpiar
   api/                      # heredado del lab 4 (copia)
   etl/                      # heredado del lab 4 (copia)
   k8s/
@@ -35,13 +36,15 @@ proyecto-final/
     overlays/
       local/                # kind / desarrollo (tu overlay principal)
       demo/                 # segundo entorno (parches distintos)
+  gitops/
+    argocd-application.yaml # Application (no incluir en kustomization de la app)
 ```
 
 Docker Compose **no es obligatorio** en el proyecto final. Si lo incluyes, debe ser un extra claramente marcado (desarrollo local), no el nucleo de la entrega.
 
 ## Demo breve (profesor)
 
-Mostrar un mismo `kustomize build` sobre dos overlays y la diferencia en replicas, imagenes o recursos; mostrar `docs/operaciones.md` con un rollback real sobre el Deployment de la API.
+Mostrar un mismo `kustomize build` sobre dos overlays y la diferencia en replicas, imagenes o recursos; mostrar `docs/operaciones.md` con un rollback real sobre el Deployment de la API; en Argo CD, mostrar la app **Synced** y un cambio en Git que dispare actualizacion.
 
 ## Continuar
 

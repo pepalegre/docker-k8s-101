@@ -19,7 +19,7 @@ Directorio: `labs/04-k8s-analitica/laboratorio/`
 
 ## Siguiente modulo
 
-El [proyecto final](../05-proyecto-final/README.md) **continua** este laboratorio: hereda apps y manifiestos validados aqui y les da forma de entrega (Kustomize multi-overlay, runbook, evidencias), sin repetir el mismo trabajo desde cero.
+El [proyecto final](../05-proyecto-final/README.md) **continua** este laboratorio: hereda apps y manifiestos validados aqui y les da forma de entrega (Kustomize multi-overlay, runbook, **Argo CD**, evidencias), sin repetir el mismo trabajo desde cero.
 
 ## Navegacion del libro
 

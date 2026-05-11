@@ -17,7 +17,7 @@ Haber completado el laboratorio del modulo 4 hasta tener apps y YAML estables en
 ### 1) Crear arbol del proyecto final
 
 ```bash
-mkdir -p labs/05-proyecto-final/trabajo/proyecto-final/{api,etl,k8s/base,k8s/overlays/local,k8s/overlays/demo,docs}
+mkdir -p labs/05-proyecto-final/trabajo/proyecto-final/{api,etl,k8s/base,k8s/overlays/local,k8s/overlays/demo,docs,gitops}
 ```
 
 ### 2) Copiar aplicaciones desde el lab 4
@@ -88,5 +88,5 @@ Anade a `k8s/base/kustomization.yaml` un `commonLabels` con `app.kubernetes.io/p
 
 ## Navegacion del libro
 
-- [Anterior](../03-criterios-de-entrega.md)
+- [Anterior](../04-criterios-de-entrega.md)
 - [Siguiente](02-kustomize-y-segundo-entorno.md)

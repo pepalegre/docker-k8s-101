@@ -31,12 +31,13 @@ Documento corto (una o dos paginas) que responda sin ambigueded:
 4. Como lanzar **una ejecucion manual** del ETL desde el CronJob.
 5. Como hacer **rollback** del Deployment de la API y como verificar que volvio la revision anterior.
 6. Como **eliminar** el despliegue sin dejar PVCs huérfanos si eso aplica a tu manifiesto.
+7. Tras el lab de Argo CD: seccion **GitOps** (repo, rama, `Application`, sync, deriva frente a `kubectl edit`).
 
 ## Continuar
 
-- [03-criterios-de-entrega.md](03-criterios-de-entrega.md)
+- [03-argocd-gitops.md](03-argocd-gitops.md)
 
 ## Navegacion del libro
 
 - [Anterior](01-definicion-del-proyecto.md)
-- [Siguiente](03-criterios-de-entrega.md)
+- [Siguiente](03-argocd-gitops.md)
