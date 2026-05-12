@@ -11,7 +11,7 @@ def health():
 
 @app.get("/metrics")
 def metrics():
-    return {"aaa": "bbb"}
+    return {"aaa": DATABASE_URL}
     # with psycopg.connect(DATABASE_URL) as conn:
     #    with conn.cursor() as cur:
     #        cur.execute("SELECT metric, value FROM metrics ORDER BY metric")
