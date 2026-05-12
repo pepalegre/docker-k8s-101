@@ -11,8 +11,9 @@ def health():
 
 @app.get("/metrics")
 def metrics():
-    with psycopg.connect(DATABASE_URL) as conn:
-        with conn.cursor() as cur:
-            cur.execute("SELECT metric, value FROM metrics ORDER BY metric")
-            rows = [{"metric": m, "value": v} for m, v in cur.fetchall()]
-    return jsonify(rows)
+    return {"aaa": "bbb"}
+    # with psycopg.connect(DATABASE_URL) as conn:
+    #    with conn.cursor() as cur:
+    #        cur.execute("SELECT metric, value FROM metrics ORDER BY metric")
+    #        rows = [{"metric": m, "value": v} for m, v in cur.fetchall()]
+    #return jsonify(rows)
