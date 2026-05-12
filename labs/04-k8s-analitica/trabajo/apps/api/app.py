@@ -7,7 +7,7 @@ DATABASE_URL = os.environ["DATABASE_URL"]
 
 @app.get("/health")
 def health():
-    return {"version": "v1"}
+    return {"status": "ok"}
 
 @app.get("/metrics")
 def metrics():
